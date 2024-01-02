@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} 
+Education
+{% endblock %}
+
+{% block extra_head %}
+<link href="{% static 'planner/css/education_style.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+<div class="container">
+   
+
+    <table class="table table-bordered table-hover text-center m-4">
+        <thead class="thead-dark">
+            <tr>
+                <th>Degree</th>
+                <th>Concentration</th>
+                <th>Institute</th>
+                <th>Result</th>
+                <th>Pass.year</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for education in educations %}
+            <tr>
+                <td>{{ education.degree }}</td>
+                <td>{{ education.concentration }}</td>
+                <td>{{ education.institute }}</td>
+                <td>{{ education.result }}</td>
+                <td>{{ education.passing_year }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+
+{% endblock %}

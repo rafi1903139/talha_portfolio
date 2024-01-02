@@ -1,0 +1,70 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;500;600&display=swap");
+body {
+    background-color: #f4eee8;
+    font-family: "Spectral", serif;
+  }
+  
+
+
+
+
+.container {
+    margin-top: 20px;
+  }
+  
+  .card {
+    width: 50%;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s, transform 0.3s; /* Add transitions for box-shadow and transform */
+  }
+  
+  .card:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Add a box-shadow effect on hover */
+    transform: scale(1.05); /* Scale the card on hover */
+  }
+
+  .card-body {
+    display: flex;
+    align-items: center;
+  }
+  
+  .card-img {
+    max-width: 100px;
+    /* Adjust as needed */
+    margin-right: 20px;
+  }
+  
+  .modal-content {
+    width: 80%;
+    margin: 5% auto;
+  }
+  
+  .modal-body {
+    max-height: 400px;
+    /* Adjust as needed */
+    overflow-y: auto;
+  }
+  
+  /* Style for the modal-like appearance */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+  }
+  
+
+

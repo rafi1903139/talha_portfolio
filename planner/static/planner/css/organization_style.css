@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;500;600&display=swap");
+
+body {
+  background-color: #f4eee8;
+  font-family: "Spectral", serif;
+}
+
+
+th{
+  text-align: center;
+  background-color: #f68c00 !important;
+  color: #0c2743 !important;
+  padding: 8px 15px !important;
+  border-right: 1px solid white !important;
+  text-transform: uppercase !important;
+}
+

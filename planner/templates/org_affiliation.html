@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} 
+Org. Affiliation
+{% endblock %}
+
+{% block extra_head %}
+<link href="{% static 'planner/css/organization_style.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="container">
+   
+
+    <table class="table table-bordered table-hover text-center m-4">
+        <thead class="thead-dark">
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Position</th>
+                <th>ID</th>
+                <th>Period</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for affiliation in affiliations %}
+            <tr>
+                <td>{{ affiliation.name }}</td>
+                <td>{{ affiliation.org_type }}</td>
+                <td>{{ affiliation.position }}</td>
+                <td>{{ affiliation.identification }}</td>
+                <td>{{ affiliation.period }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;500;600&display=swap");
+
+body {
+  background-color: #f4eee8;
+  font-family: "Spectral", serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.title {
+  background-color: #f68c00;
+  color: #0c2743;
+  border-top-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+
+  font-weight: 600;
+}
+
+.navbar {
+  z-index: 1000;
+  width: 100%;
+}
+
+.intro-text {
+  padding-top: 0 !important;
+}
+
+.intro-text h1 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.top-left {
+  border-top-left-radius: 8px;
+}
+.bottom-right {
+  border-bottom-right-radius: 8px;
+}
+
+h5 {
+  margin-bottom: 0;
+  padding: 8px 0;
+}
+
+.secondary-title .col {
+  background-color: #f68c00;
+  color: #0c2743;
+  margin-right: 0.2em;
+}
+
+
+/* Add this to your existing CSS stylesheet */
+
+.soft-skill {
+  transition: box-shadow 0.3s, transform 0.3s; /* Add transitions for box-shadow and transform */
+}
+
+.soft-skill:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Add a box-shadow effect on hover */
+  transform: scale(1.05); /* Scale the card on hover */
+}
+
+
+
+
+
+
+
+
+.skills-section {
+  padding: 50px 0;
+}
+
+.skill-category {
+  margin-bottom: 30px;
+}
+
+.skill-item {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  flex: 1; /* Distribute available space equally */
+}
+
+.skill-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.software-name {
+  font-weight: bold;
+}
+
+.knowledge-level {
+  color: #6c757d;
+}
+
+/* Flexbox Container */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .skill-item {
+      flex: 0 0 100%; /* Full width on smaller screens */
+  }
+}

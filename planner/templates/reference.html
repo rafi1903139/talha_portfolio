@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Reference
+{% endblock %}
+
+
+{% block extra_head %}
+<link href="{% static 'planner/css/reference_style.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+
+
+{% block content %}
+
+<h3 class="text-center mb-4 top-left bottom-left top-right bottom-right">
+    Professional
+</h3>
+
+<div class="container my-4">
+
+    <div class="row">
+
+        {% for reference in reference_list %}
+            {% if reference.refrence_type == 'Professional' %}
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body d-flex flex-column justify-content-between align-items-center">
+                            <div class="profile-pic">
+                                {% if reference.reference_img %}
+                                    <img src="{{ reference.reference_img.url|default:'logo.jpg' }}" alt="Company Logo"
+                                        class="img-fluid card-img-top">
+                                {% else %}
+                                    <p class="text-center">Image not available</p>
+                                {% endif %}
+                            </div>
+                            <div class="profile-details mt-3">
+                                <h5 class="card-title">{{reference.name}}</h5>
+                                <p class="card-text">{{reference.organization_name}}</p>
+                                <p class="card-text">{{reference.designation}}</p>
+                                <p class="card-text">{{reference.address}}</p>
+                                <p class="card-text">{{reference.contact_no}}</p>
+                                <p class="card-text">{{reference.email}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+    </div>
+
+</div>
+
+
+<h3 class="text-center mb-4 top-left bottom-left top-right bottom-right">
+    Academics
+</h3>
+
+<div class="container my-4">
+
+    <div class="row">
+
+        {% for reference in reference_list %}
+            {% if reference.refrence_type == 'Academics' %}
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body d-flex flex-column align-items-center">
+                            <div class="profile-pic">
+                                {% if reference.reference_img %}
+                                    <img src="{{ reference.reference_img.url|default:'logo.jpg' }}" alt="Profile"
+                                        class="img-fluid card-img-top">
+                                {% else %}
+                                    <p class="text-center">Image not available</p>
+                                {% endif %}
+                            </div>
+                            <div class="profile-details mt-3">
+                                <h5 class="card-title">{{reference.name}}</h5>
+                                <p class="card-text">{{reference.organization_name}}</p>
+                                <p class="card-text">{{reference.designation}}</p>
+                                <p class="card-text">{{reference.address}}</p>
+                                <p class="card-text">{{reference.contact_no}}</p>
+                                <p class="card-text">{{reference.email}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+    </div>
+
+</div>
+
+
+<h3 class="text-center mb-4 top-left bottom-left top-right bottom-right">
+    Work Supervisor
+</h3>
+
+<div class="container my-4">
+
+    <div class="row">
+
+        {% for reference in reference_list %}
+            {% if reference.refrence_type == 'Work Supervisor' %}
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="profile-pic">
+                                {% if reference.reference_img %}
+                                    <img src="{{ reference.reference_img.url|default:'logo.jpg' }}" alt="Profile"
+    class="img-fluid card-img-top " style="object-fit: cover;">
+
+                                {% else %}
+                                    <p class="text-center">Image not available</p>
+                                {% endif %}
+                            </div>
+                            <div class="profile-details mt-3">
+                                <h5 class="card-title">{{reference.name}}</h5>
+                                <p class="card-text">{{reference.organization_name}}</p>
+                                <p class="card-text">{{reference.designation}}</p>
+                                <p class="card-text">{{reference.address}}</p>
+                                <p class="card-text">{{reference.contact_no}}</p>
+                                <p class="card-text">{{reference.email}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+    </div>
+
+</div>
+
+<h3 class="text-center mb-4 top-left bottom-left top-right bottom-right">
+    Work Collegue
+</h3>
+
+<div class="container my-4">
+
+    <div class="row">
+
+        {% for reference in reference_list %}
+            {% if reference.refrence_type == 'Work Collegue' %}
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="profile-pic">
+                                {% if reference.reference_img %}
+                                    <img src="{{ reference.reference_img.url|default:'logo.jpg' }}" alt="Profile"
+                                        class="img-fluid card-img-top">
+                                {% else %}
+                                    <p class="text-center">Image not available</p>
+                                {% endif %}
+                            </div>
+                            <div class="profile-details mt-3">
+                                <h5 class="card-title">{{reference.name}}</h5>
+                                <p class="card-text">{{reference.organization_name}}</p>
+                                <p class="card-text">{{reference.designation}}</p>
+                                <p class="card-text">{{reference.address}}</p>
+                                <p class="card-text">{{reference.contact_no}}</p>
+                                <p class="card-text">{{reference.email}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+    </div>
+
+</div>
+
+
+
+
+{% endblock %}

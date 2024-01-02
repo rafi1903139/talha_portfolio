@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;500&display=swap");
+
+body {
+  background-color: #f4eee8;
+  font-family: "Spectral", serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card {
+
+  transition: box-shadow 0.3s, transform 0.3s; /* Add transitions for box-shadow and transform */
+}
+
+.card:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Add a box-shadow effect on hover */
+  transform: scale(1.05); /* Scale the card on hover */
+}
+
+
+
+.profile-pic img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  
+}
+
+
+
+#modify{
+  transform: translate(-15px, -45px) scale(1.8)!important;
+}
+#modify1{
+  transform: translate(0px, 25px) scale(4)!important;
+}
+#modify2{
+  transform: translate(0px, -20px) scale(1.5)!important;
+}
+#modify3{
+  transform: translate(0px, -20px) scale(3)!important;
+}
+#modify4{
+  transform: translate(0px, -100px) scale(1.3)!important;
+}
+
+
+#aca-ref-img-1 {
+  position: relative;
+  width: 300px;
+  overflow: hidden;
+}
+
+#aca-ref-img-1 img {
+  position: absolute;
+  top: 150px;
+
+  object-fit: contain;
+  transform: scale(3);
+}
+
+#wo-sup-1 {
+  position: relative;
+  width: 300px;
+  overflow: hidden;
+}
+
+#wo-sup-1 img {
+  position: absolute;
+  top: 100px;
+  object-fit: contain;
+  transform: scale(3);
+}
+
+.profile-details p {
+  margin-bottom: 0.4em;
+}
+
+h3 {
+  background-color: #f68c00;
+  color: #0c2743;
+  padding: 0.3em 0;
+  margin: 0.3em 0;
+  border-top-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}

@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} 
+Skills
+{% endblock %}
+
+{% block extra_head %}
+<link href="{% static 'planner/css/skills_style.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container skills-section">
+    <!-- Areas of Expertise -->
+    <div class="skill-category">
+        <h2 class="text-center mb-4">Areas of Expertise</h2>
+        {% for area in areas_of_expertise %}
+            <div class="skill-item">
+                <h3 class="skill-title">{{ area.title }}</h3>
+                <ul>
+                    {% for item in area.expertise_items.all %}
+                        <li>{{ item.item_name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!-- Software Skills -->
+    <div class="skill-category">
+        <h2 class="text-center mb-4">Software Skills</h2>
+        <div class="row">
+            {% for software_skill in software_skills %}
+                <div class="col-md-4 ">
+                    <div class="skill-item soft-skill">
+                        <h3 class="skill-title">{{ software_skill.name }}</h3>
+                        <ul>
+                            {% for software_name in software_skill.software_names.all %}
+                                <li class="software-name">{{ software_name.name }}</li>
+                                <ul>
+                                    {% for knowledge_level in software_name.working_knowledge.all %}
+                                        <li class="knowledge-level">{{ knowledge_level.level }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+   <!-- Language Skills -->
+<div class="skill-category">
+    <h2 class="text-center mb-4">Language Skills</h2>
+    <div class="row">
+        {% for language_skill in language_skills %}
+            <div class="col-md-4 ">
+                <div class="skill-item soft-skill">
+                    <h3 class="skill-title">{{ language_skill.name }}</h3>
+                    <p class="skill-description">{{ language_skill.level }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+</div>
+
+{% endblock %}

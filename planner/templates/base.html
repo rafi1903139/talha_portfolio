@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Default Title{% endblock %}</title>
+
+
+
+    <!-- Include your common CSS files -->
+    <!--boostrap css-->
+    <link href="{% static 'planner/css/bootstrap.min.css' %}" rel="stylesheet" />
+    <!--fontawsome css-->
+    <link href="{% static 'planner/css/fontawsome.min.css' %}" rel="stylesheet" />
+    <!--nav style-->
+    <link href="{% static 'planner/css/nav.css' %}" rel="stylesheet" />
+
+    <!-- defaulut style -->
+    <link href="{% static 'planner/css/home_style.css' %}" rel="stylesheet" />
+
+
+    {% block extra_head %}{% endblock %}
+</head>
+
+<body>
+
+    {% include 'navbar.html' %}
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- <footer>
+        <p>&copy; 2023 My Site</p>
+    </footer> -->
+
+    <!-- Include your common JavaScript files -->
+    <script src="{% static 'planner/js/navbar_handler.js' %}"></script>
+
+    {% block extra_scripts %}{% endblock %}
+</body>
+
+</html>

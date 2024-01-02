@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} 
+Participation
+{% endblock %}
+
+{% block extra_head %}
+<link href="{% static 'planner/css/education_style.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+
+
+    <table class="table table-bordered table-hover text-center m-4">
+        <thead class="thead-dark">
+            <tr>
+                <th>Title</th>
+                <th>Event Type</th>
+                <th>Purpose</th>
+                <th>Organized By</th>
+                <th>Location</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for participation in participations %}
+            <tr>
+                <td>{{ participation.title }}</td>
+                <td>{{ participation.event_type }}</td>
+                <td>{{ participation.purpose }}</td>
+                <td>{{ participation.organized_by }}</td>
+                <td>{{ participation.location }}</td>
+                <td>{{ participation.date }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}

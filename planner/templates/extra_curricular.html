@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} 
+Extra Curricular
+{% endblock %}
+
+{% block extra_head %}
+<link href="{% static 'planner/css/extra_curr_style.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+
+    <table class="table m-4 table-bordered table-hover text-center">
+        <thead class="thead-dark">
+            <tr>
+                <th>Title</th>
+                <th>Organizaiton</th>
+                <th>Location</th>
+                <th>Duration</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ec in extra_curricular %}
+            <tr>
+                <td>{{ ec.title }}</td>
+                <td>{{ ec.organization }}</td>
+                <td>{{ ec.location }}</td>
+                <td>{{ ec.duration }}</td>
+                <td>{{ ec.year }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+
+{% endblock %}

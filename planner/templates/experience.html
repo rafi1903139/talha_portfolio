@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+Experience
+{% endblock %}
+
+{% block extra_head %}
+<link href="{% static 'planner/css/experience_style.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="container">
+
+
+
+    <div class="container d-flex flex-wrap justify-content-start">
+        {% for experience in experiences %}
+        <div class="card m-3" style="width: 20rem;">
+            <div class="card-body d-flex flex-column">
+                <div class="text-center mb-3">
+                    {% if experience.company_logo %}
+                        <img src="{{ experience.company_logo.url|default:'logo.jpg' }}" alt="Company Logo"
+                            class="img-fluid card-img">
+                    {% else %}
+                        <p>The media file does not exist.</p>
+                    {% endif %}
+                </div>
+                <h5 class="card-title text-center">{{ experience.job_position }}</h5>
+                <p class="card-text" style="font-size: 0.9rem;">{{ experience.work_field }}</p>
+                <p class="card-text" style="font-size: 0.9rem;">Start Date: {{ experience.starting_date }}</p>
+                <p class="card-text" style="font-size: 0.9rem;">Duration: {{ experience.duration }}</p>
+                <p class="card-text" style="font-size: 0.9rem;">Location: {{ experience.location }}</p>
+                <button class="btn btn-primary" type="button" data-toggle="modal"
+                        data-target="#experienceModal{{ forloop.counter }}">See Details
+                </button>
+            </div>
+        </div>
+
+
+    
+
+    <!-- Modal for Details -->
+    <div id="experienceModal{{ forloop.counter }}" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{{ experience.job_position }} Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Accordion for Details -->
+                <div id="experienceAccordion{{ forloop.counter }}">
+                    <div class="card">
+                        <div class="card-header" id="achievementsHeading{{ forloop.counter }}">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse"
+                                    data-target="#achievementsCollapse{{ forloop.counter }}" aria-expanded="false"
+                                    aria-controls="achievementsCollapse{{ forloop.counter }}">
+                                    Achievements
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="achievementsCollapse{{ forloop.counter }}" class="collapse"
+                            aria-labelledby="achievementsHeading{{ forloop.counter }}"
+                            data-parent="#experienceAccordion{{ forloop.counter }}">
+                            <div class="card-body">
+                                {{ experience.achievements }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header" id="responsiblitiesHeading{{ forloop.counter }}">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse"
+                                    data-target="#responsiblitiesCollapse{{ forloop.counter }}" aria-expanded="false"
+                                    aria-controls="responsiblitiesCollapse{{ forloop.counter }}">
+                                    Responsibilites
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="responsiblitiesCollapse{{ forloop.counter }}" class="collapse"
+                            aria-labelledby="responsiblitiesHeading{{ forloop.counter }}"
+                            data-parent="#experienceAccordion{{ forloop.counter }}">
+                            <div class="card-body">
+                                {{ experience.responsibilities }}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Repeat similar structure for other sections -->
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+</div>
+
+<!-- Include Bootstrap JS and Popper.js -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+{% endblock %}
