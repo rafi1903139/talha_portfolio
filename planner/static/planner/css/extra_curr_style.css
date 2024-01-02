@@ -6,12 +6,3 @@ body {
 }
 
 
-
-th{
-  text-align: center;
-  background-color: #f68c00 !important;
-  color: #0c2743 !important;
-  padding: 8px 15px !important;
-  border-right: 1px solid white !important;
-  text-transform: uppercase !important;
-}

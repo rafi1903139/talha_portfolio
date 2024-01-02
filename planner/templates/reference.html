@@ -15,13 +15,13 @@ Reference
 
 {% block content %}
 
-<h3 class="text-center mb-4 top-left bottom-left top-right bottom-right">
+<h3 class="text-center mb-4 top-left bottom-left top-right bottom-right w-50 m-auto mt-4">
     Professional
 </h3>
 
 <div class="container my-4">
 
-    <div class="row">
+    <div class="row d-flex justify-content-center">
 
         {% for reference in reference_list %}
             {% if reference.refrence_type == 'Professional' %}
@@ -55,13 +55,13 @@ Reference
 </div>
 
 
-<h3 class="text-center mb-4 top-left bottom-left top-right bottom-right">
+<h3 class="text-center mb-4 top-left bottom-left top-right bottom-right w-50 m-auto mt-4">
     Academics
 </h3>
 
 <div class="container my-4">
 
-    <div class="row">
+    <div class="row d-flex justify-content-center">
 
         {% for reference in reference_list %}
             {% if reference.refrence_type == 'Academics' %}
@@ -95,13 +95,13 @@ Reference
 </div>
 
 
-<h3 class="text-center mb-4 top-left bottom-left top-right bottom-right">
+<h3 class="text-center mb-4 top-left bottom-left top-right bottom-right w-50 m-auto mt-4">
     Work Supervisor
 </h3>
 
 <div class="container my-4">
 
-    <div class="row">
+    <div class="row d-flex justify-content-center">
 
         {% for reference in reference_list %}
             {% if reference.refrence_type == 'Work Supervisor' %}
@@ -135,13 +135,13 @@ Reference
 
 </div>
 
-<h3 class="text-center mb-4 top-left bottom-left top-right bottom-right">
+<h3 class="text-center mb-4 top-left bottom-left top-right bottom-right w-50 m-auto mt-4">
     Work Collegue
 </h3>
 
 <div class="container my-4">
 
-    <div class="row">
+    <div class="row d-flex justify-content-center">
 
         {% for reference in reference_list %}
             {% if reference.refrence_type == 'Work Collegue' %}

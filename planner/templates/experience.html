@@ -31,7 +31,7 @@ Experience
                     {% endif %}
                 </div>
                 <h5 class="card-title text-center">{{ experience.job_position }}</h5>
-                <p class="card-text" style="font-size: 0.9rem;">{{ experience.work_field }}</p>
+                <p class="card-text" style="font-size: 0.9rem;">{{ experience.organization }}</p>
                 <p class="card-text" style="font-size: 0.9rem;">Start Date: {{ experience.starting_date }}</p>
                 <p class="card-text" style="font-size: 0.9rem;">Duration: {{ experience.duration }}</p>
                 <p class="card-text" style="font-size: 0.9rem;">Location: {{ experience.location }}</p>
@@ -53,7 +53,7 @@ Experience
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body ">
                 <!-- Accordion for Details -->
                 <div id="experienceAccordion{{ forloop.counter }}">
                     <div class="card">
@@ -70,7 +70,11 @@ Experience
                             aria-labelledby="achievementsHeading{{ forloop.counter }}"
                             data-parent="#experienceAccordion{{ forloop.counter }}">
                             <div class="card-body">
-                                {{ experience.achievements }}
+                                <ul>
+                                {% for achivement in experience.achievement %}
+                                    <li>{{ achivement }}</li>
+                                {% endfor %}
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -89,11 +93,139 @@ Experience
                             aria-labelledby="responsiblitiesHeading{{ forloop.counter }}"
                             data-parent="#experienceAccordion{{ forloop.counter }}">
                             <div class="card-body">
-                                {{ experience.responsibilities }}
+                                <ul>
+                                    {% for responsibilites in experience.responsibilities %}
+                                        <li>{{ responsibilites }}</li>
+                                    {% endfor %}
+                                    </ul>
                             </div>
                         </div>
                     </div>
-                    <!-- Repeat similar structure for other sections -->
+                    
+                    <div class="card">
+                        <div class="card-header" id="org_infoHeading{{ forloop.counter }}">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse"
+                                    data-target="#org_infoCollapse{{ forloop.counter }}" aria-expanded="false"
+                                    aria-controls="org_infoCollapse{{ forloop.counter }}">
+                                    Organization Info
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="org_infoCollapse{{ forloop.counter }}" class="collapse"
+                            aria-labelledby="org_infoHeading{{ forloop.counter }}"
+                            data-parent="#experienceAccordion{{ forloop.counter }}">
+                            <div class="card-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item"><strong>Business Type:</strong> {{ experience.organization_info.business_type }}</li>
+                                    <li class="list-group-item"><strong>Organization Type:</strong> {{ experience.organization_info.organization_type }}</li>
+                                    <li class="list-group-item"><strong>Address:</strong> {{ experience.organization_info.address }}</li>
+                                     </ul>
+                               
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header" id="project_infoHeading{{ forloop.counter }}">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse"
+                                    data-target="#project_infoCollapse{{ forloop.counter }}" aria-expanded="false"
+                                    aria-controls="project_infoCollapse{{ forloop.counter }}">
+                                    Project Info
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="project_infoCollapse{{ forloop.counter }}" class="collapse"
+                            aria-labelledby="project_infoHeading{{ forloop.counter }}"
+                            data-parent="#experienceAccordion{{ forloop.counter }}">
+                            <div class="card-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item"><strong>Project Name:</strong> {{ experience.project_info.project_name }}</li>
+                                    <li class="list-group-item"><strong>Summary:</strong> {{ experience.project_info.summary }}</li>
+                                    <li class="list-group-item"><strong>Work Station:</strong> {{ experience.project_info.work_station }}</li>
+                                    <li class="list-group-item"><strong>Project Location:</strong> {{ experience.project_info.project_location }}</li>
+                                    <li class="list-group-item"><strong>Supervisor Name:</strong> {{ experience.project_info.supervisor_name }}</li>
+                                    <li class="list-group-item"><strong>Designation:</strong> {{ experience.project_info.designation }}</li>
+                                    <li class="list-group-item"><strong>Email:</strong> {{ experience.project_info.email }}</li>
+                                    <li class="list-group-item"><strong>Mobile:</strong> {{ experience.project_info.mobile }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header" id="skillsHeading{{ forloop.counter }}">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse"
+                                    data-target="#skillsCollapse{{ forloop.counter }}" aria-expanded="false"
+                                    aria-controls="skillsCollapse{{ forloop.counter }}">
+                                    Skills
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="skillsCollapse{{ forloop.counter }}" class="collapse"
+                            aria-labelledby="skillsHeading{{ forloop.counter }}"
+                            data-parent="#experienceAccordion{{ forloop.counter }}">
+                            <div class="card-body">
+                                <ul>
+                                    {% for skill in experience.skills %}
+                                        <li>{{ skill }}</li>
+                                    {% endfor %}
+                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header" id="trainingHeading{{ forloop.counter }}">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse"
+                                    data-target="#trainingCollapse{{ forloop.counter }}" aria-expanded="false"
+                                    aria-controls="trainingCollapse{{ forloop.counter }}">
+                                    Training
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="trainingCollapse{{ forloop.counter }}" class="collapse"
+                            aria-labelledby="trainingHeading{{ forloop.counter }}"
+                            data-parent="#experienceAccordion{{ forloop.counter }}">
+                            <div class="card-body">
+                                <ul>
+                                    {% for training in experience.training %}
+                                        <li>{{ training }}</li>
+                                    {% endfor %}
+                                </ul>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header" id="knowledgeHeading{{ forloop.counter }}">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse"
+                                    data-target="#knowledgeCollapse{{ forloop.counter }}" aria-expanded="false"
+                                    aria-controls="knowledgeCollapse{{ forloop.counter }}">
+                                    Knowledge
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="knowledgeCollapse{{ forloop.counter }}" class="collapse"
+                            aria-labelledby="knowledgeHeading{{ forloop.counter }}"
+                            data-parent="#experienceAccordion{{ forloop.counter }}">
+                            <div class="card-body">
+                               
+                                <ul>
+                                    {% for knowledge in experience.knowledge %}
+                                        <li>{{ knowledge }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
         </div>

@@ -14,9 +14,14 @@ body {
   }
   
   .card {
+    
     width: 50%;
     margin-bottom: 20px;
     transition: box-shadow 0.3s, transform 0.3s; /* Add transitions for box-shadow and transform */
+  }
+
+  .modal-body .card {
+    width: 100%;
   }
   
   .card:hover {
@@ -35,13 +40,9 @@ body {
     margin-right: 20px;
   }
   
-  .modal-content {
-    width: 80%;
-    margin: 5% auto;
-  }
   
   .modal-body {
-    max-height: 400px;
+    max-height: 80%;
     /* Adjust as needed */
     overflow-y: auto;
   }
@@ -63,7 +64,8 @@ body {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 80%;
+    width: 70%;
+    
   }
   
 
